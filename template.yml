@@ -5,8 +5,8 @@ Resources:
       SecurityGroups:
         - !Ref InstanceSecurityGroup
       KeyName: kevinecloudkeypair1.0
-      ImageId: ami-003634241a8fcdec0
-      InstanceType: t3.micro
+      ImageId: ami-0996d3051b72b5b2c
+      InstanceType: t2.micro
   InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
