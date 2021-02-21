@@ -10,7 +10,7 @@ commands:
       - run:
           name: Destroy environment
           command: |
-            aws cloudformation delete-stack --stack-name templateUdacity
+            aws cloudformation delete-stack --stack-name templateUdacity-${CIRCLE_WORKFLOW_ID}
           when:  on_fail
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
           command: |
             aws cloudformation deploy \
               --template-file template.yml \
-              --stack-name templateUdacity
+              --stack-name templateUdacity-${CIRCLE_WORKFLOW_ID}
       - run: return 1
       - destroy_environment
           
